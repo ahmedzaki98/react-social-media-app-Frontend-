@@ -1,0 +1,169 @@
+.login {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #000346 0%, #ff0000 100%),
+    linear-gradient(58.72deg, #0029ff 0%, #aa0014 100%),
+    radial-gradient(100% 164.72% at 100% 100%, #ff00a8 0%, #00ff47 100%),
+    radial-gradient(100% 148.07% at 0% 0%, #fff500 0%, #51d500 100%);
+  background-blend-mode: overlay, overlay, difference, normal;
+  object-fit: cover;
+}
+
+.login .card {
+  width: 50%;
+  min-height: 500px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  position: absolute;
+  z-index: 1;
+}
+.login .left {
+  background: linear-gradient(rgba(39, 11, 96, 0.5), rgba(39, 11, 96, 0.5)),
+    url("https://images.pexels.com/photos/3228727/pexels-photo-3228727.jpeg?auto=compress&cs=tinysrgb&w=1600")
+      center;
+  background-size: cover;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  color: white;
+}
+
+.login .left h1 {
+  font-size: 3.5rem;
+  line-height: 4rem;
+}
+.login span {
+  font-size: 1rem;
+}
+
+.login .btn {
+  display: inline-block;
+  border-radius: 7px;
+  border: none;
+  background: white;
+  color: rebeccapurple;
+  text-align: center;
+  font-weight: bold;
+  font-size: 13px;
+  width: 50%;
+  padding: 0.8em;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+.login .btn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.4s;
+}
+
+.login .btn span:after {
+  content: "Now!";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.7s;
+}
+
+.login .btn:hover span {
+  padding-right: 2.8em;
+}
+
+.login .btn:hover span:after {
+  opacity: 4;
+  right: 0;
+}
+
+.login .right {
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.login .right h1 {
+  font-size: 3rem;
+  color: #aa0014;
+  margin-top: 2rem;
+}
+.login .right form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.login .right form input {
+  border: none;
+  border-bottom: 1px solid lightgray;
+  padding: 10px 10px;
+  outline: none;
+}
+.login .right form input:focus {
+  border-color: #aa0014;
+}
+
+.login .right button {
+  display: inline-block;
+  border-radius: 7px;
+  border: none;
+  background: #aa0014;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  width: 50%;
+  padding: 0.7em;
+  margin-top: 3rem;
+  cursor: pointer;
+}
+
+/* ____ MEDIA QUERIES (MEDIUM DEVICES) ________ */
+
+@media screen and (max-width: 1024px) {
+  .login {
+    height: 100vh;
+  }
+  .login .card {
+    width: 80%;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .login .right h1 {
+    margin-top: -50px;
+  }
+  .login .right button {
+    margin: 0;
+  }
+}
+
+/* ____ MEDIA QUERIES (SMALL DEVICES) ________ */
+@media screen and (max-width: 600px) {
+  .login {
+    height: 100vh;
+  }
+  .login .card {
+    width: 90%;
+    grid-template-columns: 1fr;
+  }
+  .login .left {
+    padding: 20px;
+  }
+  .login .right {
+    padding: 20px;
+  }
+  .login .right h1 {
+    margin-top: 0;
+  }
+  .login .right button {
+    margin: 0;
+  }
+}
