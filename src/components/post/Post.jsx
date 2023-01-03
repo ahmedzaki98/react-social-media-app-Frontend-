@@ -36,7 +36,7 @@ const Post = ({ post }) => {
           <img src={post.img} alt="" />
         </div>
         <div className="info">
-          <div className="item" onClick={!liked}>
+          <div className="item">
             {liked ? <FavoriteOutlinedIcon /> : <FavoriteBorderOutlinedIcon />}
             12 Likes
           </div>
@@ -44,7 +44,7 @@ const Post = ({ post }) => {
             <TextsmsOutlinedIcon />
             18 Comments
           </div>
-          <div className="item" onClick={!liked}>
+          <div className="item">
             <ShareOutlinedIcon />
             Share
           </div>

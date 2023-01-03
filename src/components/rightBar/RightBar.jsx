@@ -9,7 +9,10 @@ const RightBar = () => {
           <span>Suggestions For Your</span>
           <div className="user">
             <div className="user-info">
-              <img src="https://images.pexels.com/photos/3228727/pexels-photo-3228727.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="" />
+              <img
+                src="https://images.pexels.com/photos/3228727/pexels-photo-3228727.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                alt=""
+              />
               <span>Ahmed</span>
             </div>
             <div className="buttons">
@@ -19,7 +22,10 @@ const RightBar = () => {
           </div>
           <div className="user">
             <div className="user-info">
-              <img src="https://images.pexels.com/photos/3228727/pexels-photo-3228727.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="" />
+              <img
+                src="https://images.pexels.com/photos/3228727/pexels-photo-3228727.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                alt=""
+              />
               <span>Ahmed</span>
             </div>
             <div className="buttons">
@@ -32,7 +38,10 @@ const RightBar = () => {
           <span>Latest Activities</span>
           <div className="user">
             <div className="user-info">
-              <img src="https://images.pexels.com/photos/3228727/pexels-photo-3228727.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="" />
+              <img
+                src="https://images.pexels.com/photos/3228727/pexels-photo-3228727.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                alt=""
+              />
               <p>
                 <span>Ahmed </span>
                 Changed their cover picture
@@ -42,55 +51,73 @@ const RightBar = () => {
           </div>
           <div className="user">
             <div className="user-info">
-              <img src="" alt="" />
+              <img
+                src="https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                alt=""
+              />
               <p>
-                <span>Ahmed </span>
-                Changed their cover picture
+                <span>Sara Moahmed </span>
+                Liked Your Post
               </p>
             </div>
-            <span className="span-time">1 min ago </span>
+            <span className="span-time">30 min ago </span>
           </div>
           <div className="user">
             <div className="user-info">
-              <img src="" alt="" />
+              <img
+                src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                alt=""
+              />
               <p>
-                <span>Ahmed </span>
+                <span>Ali Ahmed </span>
                 Changed their cover picture
               </p>
             </div>
-            <span className="span-time">1 min ago</span>
+            <span className="span-time">1 hr ago</span>
           </div>
         </div>
         <div className="item">
           <span>Online Friends</span>
           <div className="user">
             <div className="user-info">
-              <img src="https://images.pexels.com/photos/3228727/pexels-photo-3228727.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="" />
+              <img
+                src="https://images.pexels.com/photos/3228727/pexels-photo-3228727.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                alt=""
+              />
               <div className="online" />
               <span>Ahmed </span>
             </div>
           </div>
           <div className="user">
             <div className="user-info">
-              <img src="" alt="" />
+              <img
+                src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                alt=""
+              />
               <div className="online" />
-              <span>Ahmed </span>
+              <span>Ali Ahmed </span>
             </div>
           </div>
           <div className="user">
             <div className="user-info">
-              <img src="" alt="" />
+              <img
+                src="https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                alt=""
+              />
               <div className="online" />
-              <span>Ahmed </span>
+              <span>Sara Mohamed </span>
             </div>
           </div>
           <div className="user">
             <div className="user-info">
-              <img src="" alt="" />
+              <img
+                src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                alt=""
+              />
               <div className="online" />
               <span>Ahmed </span>
             </div>
-          </div>  
+          </div>
         </div>
       </div>
     </div>

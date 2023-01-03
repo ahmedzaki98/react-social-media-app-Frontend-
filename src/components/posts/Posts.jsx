@@ -1,4 +1,3 @@
-import React from "react";
 import Post from "../post/Post";
 import "./posts.scss";
 
@@ -7,11 +6,10 @@ const Posts = () => {
   const posts = [
     {
       id: 1,
-      name: "John Doe",
+      name: "Ahmed Zaki",
       userId: 1,
       profilePic:
-        "https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=1600",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+        "https://images.pexels.com/photos/14028501/pexels-photo-14028501.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
       img: "https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600",
     },
     {
