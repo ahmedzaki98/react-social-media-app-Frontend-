@@ -1,8 +1,7 @@
 # Z##social
 
 ## Description
-the project is a social media App
-
+the project is a social media App, and the web App has a Dark Mode option such you can switch between dark and light modes easily.
 
 ## Techs:
 1. HTML5
