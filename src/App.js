@@ -11,6 +11,7 @@ import "./style.scss";
 import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
 import { AuthContext } from "./context/authContext";
+import "./App.css";
 
 function App() {
   const { currentUser } = useContext(AuthContext);
