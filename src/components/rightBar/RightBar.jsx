@@ -9,7 +9,7 @@ const RightBar = () => {
           <span>Suggestions For Your</span>
           <div className="user">
             <div className="user-info">
-              <img src="" alt="" />
+              <img src="https://images.pexels.com/photos/3228727/pexels-photo-3228727.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="" />
               <span>Ahmed</span>
             </div>
             <div className="buttons">
@@ -19,7 +19,7 @@ const RightBar = () => {
           </div>
           <div className="user">
             <div className="user-info">
-              <img src="" alt="" />
+              <img src="https://images.pexels.com/photos/3228727/pexels-photo-3228727.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="" />
               <span>Ahmed</span>
             </div>
             <div className="buttons">
@@ -32,13 +32,13 @@ const RightBar = () => {
           <span>Latest Activities</span>
           <div className="user">
             <div className="user-info">
-              <img src="" alt="" />
+              <img src="https://images.pexels.com/photos/3228727/pexels-photo-3228727.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="" />
               <p>
                 <span>Ahmed </span>
                 Changed their cover picture
               </p>
             </div>
-            <span>1 min ago </span>
+            <span className="span-time">1 min ago </span>
           </div>
           <div className="user">
             <div className="user-info">
@@ -48,7 +48,7 @@ const RightBar = () => {
                 Changed their cover picture
               </p>
             </div>
-            <span>1 min ago </span>
+            <span className="span-time">1 min ago </span>
           </div>
           <div className="user">
             <div className="user-info">
@@ -58,14 +58,14 @@ const RightBar = () => {
                 Changed their cover picture
               </p>
             </div>
-            <span>1 min ago</span>
+            <span className="span-time">1 min ago</span>
           </div>
         </div>
         <div className="item">
           <span>Online Friends</span>
           <div className="user">
             <div className="user-info">
-              <img src="" alt="" />
+              <img src="https://images.pexels.com/photos/3228727/pexels-photo-3228727.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="" />
               <div className="online" />
               <span>Ahmed </span>
             </div>
