@@ -30,6 +30,10 @@
           background-color: transparent;
           width: 60%;
           color: themed("textColor");
+          @include mobile {
+            width: 70%;
+            padding: 20px 5px;
+          }
         }
       }
 
@@ -54,6 +58,9 @@
             align-items: center;
             gap: 10px;
             cursor: pointer;
+            @include mobile {
+              gap: 5px;
+            }
 
             img {
               height: 20px;
@@ -75,6 +82,10 @@
             border-radius: 10px;
             font-size: 16px;
             letter-spacing: 1px;
+            @include mobile {
+              font-size: 12px;
+              margin-left: 15px;
+            }
           }
         }
       }
