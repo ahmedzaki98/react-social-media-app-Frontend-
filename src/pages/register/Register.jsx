@@ -1,19 +1,66 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./register.scss";
+import axios from "axios";
 
 const Register = () => {
+  const [err, setErr] = useState(null);
+  const [inputs, setInputs] = useState({
+    username: "",
+    email: "",
+    password: "",
+    name: "",
+  });
+
+  const onHandleChange = (e) => {
+    setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const onHandleClick = async (e) => {
+    e.preventDefault();
+
+    try {
+      await axios.post("http://localhost:8800/api/auth/register", inputs);
+    } catch (err) {
+      setErr(err.response.data);
+    }
+  };
+  console.log(err);
+
   return (
     <div className="register">
       <div className="card">
         <div className="right">
           <h1>Register</h1>
           <form>
-            <input type="text" placeholder="username" />
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="password" />
-            <input type="text" placeholder="Name" />
-            <button className="btn">Register</button>
+            <input
+              type="text"
+              placeholder="username"
+              name="username"
+              onChange={onHandleChange}
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              name="email"
+              onChange={onHandleChange}
+            />
+            <input
+              type="password"
+              placeholder="password"
+              name="password"
+              onChange={onHandleChange}
+            />
+            <input
+              type="text"
+              placeholder="Name"
+              name="name"
+              onChange={onHandleChange}
+            />
+            {err && err}
+            <button className="btn" onClick={onHandleClick}>
+              Register
+            </button>
           </form>
         </div>
         <div className="register-left">
