@@ -1,15 +1,32 @@
 import React from "react";
-import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/authContext";
-
+// import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import "./login.scss";
 
 const Login = () => {
+  const [inputs, setInputs] = useState({
+    username: "",
+    password: "",
+  });
+  const [err, setErr] = useState(null);
+
+  const navigate = useNavigate();
+
+  const onHandleChange = (e) => {
+    setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
   const { login } = useContext(AuthContext);
 
-  const handelLogin = () => {
-    login();
+  const handelLogin = async (e) => {
+    e.preventDefault();
+    try {
+      await login(inputs);
+      navigate("/");
+    } catch (err) {
+      setErr(err.response.data);
+    }
   };
 
   return (
@@ -19,11 +36,8 @@ const Login = () => {
           <h1>
             <strong style={{ color: "#aa0014" }}>Z</strong>social
           </h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero cum,
-            alias totam numquam ipsa exercitationem dignissimos, error nam,
-            consequatur.
-          </p>
+          <h2>New Here?</h2>
+          <p>Sign up and discover a great amount of new opportunities.</p>
           <span>Don't have an account?</span>
           <Link to="/register">
             <button className="btn">
@@ -34,10 +48,21 @@ const Login = () => {
         <div className="right">
           <h1>Login</h1>
           <form>
-            <input type="text" placeholder="username" />
-            <input type="password" placeholder="password" />
+            <input
+              type="text"
+              placeholder="username"
+              name="username"
+              onChange={onHandleChange}
+            />
+            <input
+              type="password"
+              placeholder="password"
+              name="password"
+              onChange={onHandleChange}
+            />
+            {err && err}
             <button onClick={handelLogin} className="btn">
-              Login
+              Sign in
             </button>
           </form>
         </div>
