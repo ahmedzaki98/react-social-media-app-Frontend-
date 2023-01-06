@@ -67,10 +67,9 @@ const Register = () => {
           <h1>
             <strong style={{ color: "#aa0014" }}>Z</strong>social
           </h1>
+          <h2>Welcome Back!</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero cum,
-            alias totam numquam ipsa exercitationem dignissimos, error nam,
-            consequatur.
+            To keep connected with with us please login with your personal info.
           </p>
           <span className="qus_span">Do you have an account?</span>
           <Link to="/login">
