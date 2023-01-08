@@ -20,7 +20,7 @@ const Post = ({ post }) => {
           <div className="user-info">
             <img src={post.profilePic} alt="" />
             <div className="details">
-            <Link
+              <Link
                 to={`/profile/${post.userId}`}
                 style={{ textDecoration: "none", color: "inherit" }}
               >
@@ -33,7 +33,7 @@ const Post = ({ post }) => {
         </div>
         <div className="content">
           <p>{post.desc}</p>
-          <img src={post.img} alt="" />
+          <img src={"./upload/" + post.img} alt="" />
         </div>
         <div className="info">
           <div className="item">
