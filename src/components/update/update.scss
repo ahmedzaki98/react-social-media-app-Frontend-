@@ -16,8 +16,9 @@
     .wrapper {
       margin: auto;
       width: 40%;
-      height: 70%;
+      height: 85%;
       background-color: themed("bg");
+      border-radius: 10px;
       padding: 50px;
       z-index: 999;
       display: flex;
@@ -28,9 +29,14 @@
       box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
       position: relative;
 
+      @include tablet {
+        width: 70%;
+        height: 65%;
+      }
+
       @include mobile {
-        width: 100%;
-        height: 100%;
+        width: 80%;
+        height: 80%;
       }
 
       h1 {
@@ -65,6 +71,7 @@
               width: 100px;
               height: 100px;
               object-fit: cover;
+              border-radius: 50%;
             }
 
             .icon {
@@ -91,6 +98,7 @@
 
         button {
           border: none;
+          border-radius: 5px;
           padding: 10px;
           cursor: pointer;
           color: white;
@@ -100,9 +108,13 @@
 
       .close {
         position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         top: 10px;
         right: 20px;
         border: none;
+        border-radius: 50%;
         background-color: #f0544f;
         padding: 5px;
         cursor: pointer;
