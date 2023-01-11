@@ -15,7 +15,7 @@ import moment from "moment";
 
 const Post = ({ post }) => {
   const [openComments, setOpenComments] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
+  // const [menuOpen, setMenuOpen] = useState(false);
   const { currentUser } = useContext(AuthContext);
 
   const { isLoading, error, data } = useQuery(["likes", post.id], () =>
@@ -73,7 +73,9 @@ const Post = ({ post }) => {
               <span className="date"> {moment(post.createdAt).fromNow()} </span>
             </div>
           </div>
-          <CloseIcon onClick={handleDelete} />
+          {post.userId === currentUser.id && (
+            <CloseIcon onClick={handleDelete} />
+          )}
           {/* {menuOpen && post.userId === currentUser.id && (
             <div className="delete-post">
               <span onClick={handleDelete}>delete</span>
