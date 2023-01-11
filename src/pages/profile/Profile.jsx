@@ -10,6 +10,7 @@ import LanguageIcon from "@mui/icons-material/Language";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Posts from "../../components/posts/Posts";
+import Update from "../../components/update/Update";
 import { useQuery, useMutation, useQueryClient } from "react-query";
 import { makeRequest } from "../../axios";
 import { useLocation } from "react-router-dom";
@@ -121,7 +122,7 @@ const Profile = () => {
           </div>
         </>
       )}
-      {/* {openUpdate && <Update setOpenUpdate={setOpenUpdate} user={data} />} */}
+      {openUpdate && <Update setOpenUpdate={setOpenUpdate} user={data} />}
     </div>
   );
 };
