@@ -5,13 +5,40 @@ import TextsmsOutlinedIcon from "@mui/icons-material/TextsmsOutlined";
 import ShareOutlinedIcon from "@mui/icons-material/ShareOutlined";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { useQuery, useMutation, useQueryClient } from "react-query";
+import { makeRequest } from "../../axios";
+import { AuthContext } from "../../context/authContext";
 import Comments from "../comments/Comments";
+import moment from "moment";
 
 const Post = ({ post }) => {
   const [openComments, setOpenComments] = useState(false);
-  //TEMPORARY
-  const liked = false;
+  const { currentUser } = useContext(AuthContext);
+
+  const { isLoading, error, data } = useQuery(["likes", post.id], () =>
+    makeRequest.get("/likes?postId=" + post.id).then((res) => {
+      return res.data;
+    })
+  );
+  const queryClient = useQueryClient();
+
+  const mutation = useMutation(
+    (liked) => {
+      if (liked) return makeRequest.delete("/likes?postId=" + post.id);
+      return makeRequest.post("/likes", { postId: post.id });
+    },
+    {
+      onSuccess: () => {
+        // Invalidate and refetch
+        queryClient.invalidateQueries(["likes"]);
+      },
+    }
+  );
+
+  const onHandleLike = () => {
+    mutation.mutate(data.includes(currentUser.id));
+  };
 
   return (
     <div className="post">
@@ -26,7 +53,7 @@ const Post = ({ post }) => {
               >
                 <span className="name">{post.name}</span>
               </Link>
-              <span className="date">10 min ago</span>
+              <span className="date"> {moment(post.createdAt).fromNow()} </span>
             </div>
           </div>
           <MoreHorizIcon />
@@ -37,8 +64,17 @@ const Post = ({ post }) => {
         </div>
         <div className="info">
           <div className="item">
-            {liked ? <FavoriteOutlinedIcon /> : <FavoriteBorderOutlinedIcon />}
-            12 Likes
+            {isLoading ? (
+              "Loading"
+            ) : data.includes(currentUser.id) ? (
+              <FavoriteOutlinedIcon
+                style={{ color: "red" }}
+                onClick={onHandleLike}
+              />
+            ) : (
+              <FavoriteBorderOutlinedIcon onClick={onHandleLike} />
+            )}
+            {data?.length || 0} Likes
           </div>
           <div className="item" onClick={() => setOpenComments(!openComments)}>
             <TextsmsOutlinedIcon />
@@ -49,7 +85,7 @@ const Post = ({ post }) => {
             Share
           </div>
         </div>
-        {openComments && <Comments />}
+        {openComments && <Comments postId={post.id} />}
       </div>
     </div>
   );
