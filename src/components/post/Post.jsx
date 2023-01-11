@@ -4,6 +4,7 @@ import FavoriteOutlinedIcon from "@mui/icons-material/FavoriteOutlined";
 import TextsmsOutlinedIcon from "@mui/icons-material/TextsmsOutlined";
 import ShareOutlinedIcon from "@mui/icons-material/ShareOutlined";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import CloseIcon from '@mui/icons-material/Close';
 import { Link } from "react-router-dom";
 import { useState, useContext } from "react";
 import { useQuery, useMutation, useQueryClient } from "react-query";
@@ -14,6 +15,7 @@ import moment from "moment";
 
 const Post = ({ post }) => {
   const [openComments, setOpenComments] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const { currentUser } = useContext(AuthContext);
 
   const { isLoading, error, data } = useQuery(["likes", post.id], () =>
@@ -36,10 +38,25 @@ const Post = ({ post }) => {
     }
   );
 
+  const deleteMutation = useMutation(
+    (postId) => {
+      return makeRequest.delete("/posts/" + postId);
+    },
+    {
+      onSuccess: () => {
+        // Invalidate and refetch
+        queryClient.invalidateQueries(["posts"]);
+      },
+    }
+  );
+
   const onHandleLike = () => {
     mutation.mutate(data.includes(currentUser.id));
   };
 
+  const handleDelete = () => {
+    deleteMutation.mutate(post.id);
+  };
   return (
     <div className="post">
       <div className="container">
@@ -56,7 +73,12 @@ const Post = ({ post }) => {
               <span className="date"> {moment(post.createdAt).fromNow()} </span>
             </div>
           </div>
-          <MoreHorizIcon />
+          <CloseIcon onClick={handleDelete} />
+          {/* {menuOpen && post.userId === currentUser.id && (
+            <div className="delete-post">
+              <span onClick={handleDelete}>delete</span>
+            </div>
+          )} */}
         </div>
         <div className="content">
           <p>{post.desc}</p>
