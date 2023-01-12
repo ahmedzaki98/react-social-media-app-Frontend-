@@ -9,23 +9,23 @@ const Stories = () => {
   const stories = [
     {
       id: 1,
-      name: "John Doe",
-      img: "https://images.pexels.com/photos/13916254/pexels-photo-13916254.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+      name: "mohamed",
+      img: "https://cdn.pixabay.com/photo/2016/08/17/01/39/mystery-1599527_960_720.jpg",
     },
     {
       id: 2,
-      name: "John Doe",
-      img: "https://images.pexels.com/photos/13916254/pexels-photo-13916254.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+      name: "ali",
+      img: "https://cdn.pixabay.com/photo/2017/09/02/15/10/lighthouse-2707528_960_720.jpg",
     },
     {
       id: 3,
-      name: "John Doe",
-      img: "https://images.pexels.com/photos/13916254/pexels-photo-13916254.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+      name: "ahmed",
+      img: "https://cdn.pixabay.com/photo/2014/07/31/23/04/smartphone-407108_960_720.jpg",
     },
     {
       id: 4,
-      name: "John Doe",
-      img: "https://images.pexels.com/photos/13916254/pexels-photo-13916254.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+      name: "sara",
+      img: "https://cdn.pixabay.com/photo/2019/06/02/17/33/woman-4246954_960_720.jpg",
     },
   ];
 
