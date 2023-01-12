@@ -6,7 +6,7 @@ const RightBar = () => {
     <div className="rightBar">
       <div className="container">
         <div className="item">
-          <span>Suggestions For Your</span>
+          <span>Suggestions For You</span>
           <div className="user">
             <div className="user-info">
               <img
@@ -26,7 +26,7 @@ const RightBar = () => {
                 src="https://images.pexels.com/photos/3228727/pexels-photo-3228727.jpeg?auto=compress&cs=tinysrgb&w=1600"
                 alt=""
               />
-              <span>Ahmed</span>
+              <span>Ali</span>
             </div>
             <div className="buttons">
               <button>Follow</button>
