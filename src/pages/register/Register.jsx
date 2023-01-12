@@ -25,7 +25,6 @@ const Register = () => {
       setErr(err.response.data);
     }
   };
-  console.log(err);
 
   return (
     <div className="register">
@@ -57,7 +56,7 @@ const Register = () => {
               name="name"
               onChange={onHandleChange}
             />
-            {err && err}
+            <span>{err && err}</span>
             <button className="btn" onClick={onHandleClick}>
               Register
             </button>

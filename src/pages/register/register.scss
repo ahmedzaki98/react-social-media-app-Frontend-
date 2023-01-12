@@ -14,8 +14,8 @@
 
 .register .card {
   width: 50%;
-  min-height: 500px;
-  max-height: 600px;
+  min-height: 550px;
+  max-height: 550px;
   display: grid;
   grid-template-columns: 50% 50%;
   background: white;
@@ -95,7 +95,7 @@
 .register .right h1 {
   font-size: 3rem;
   color: #aa0014;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 .register .right form {
   display: flex;
@@ -123,7 +123,6 @@
   font-size: 16px;
   width: 50%;
   padding: 0.7em;
-  margin-top: 1rem;
   cursor: pointer;
 }
 
