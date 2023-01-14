@@ -7,6 +7,9 @@
 https://user-images.githubusercontent.com/55949920/212487914-1c060fa4-d17c-47a0-b512-e5cac9ecc964.mp4
 
 
+![zsocial](https://user-images.githubusercontent.com/55949920/212488584-b307d6a2-198e-4017-87d1-f73e289c8719.gif)
+
+
 
 ## Techs:
 1. HTML5
